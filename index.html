@@ -4,32 +4,40 @@
   <meta charset="UTF-8">
   <title>跑步紀錄系統</title>
   
-  <!-- 1. 雙重跳轉保險：如果 JS 失效，5秒後自動強制刷新到 GAS -->
-  <meta http-equiv="refresh" content="0; url=https://script.google.com/macros/s/AKfycbzkNTA-kAYdcXjDUlrq7PIcdXDKUPQK5ocbUCFxWt6FXrusAgf2tOPXAUOqSBboWH14rw/exec
+  <!-- 1. 將時間設為 5 秒，讓你有時間按分享 -->
+  <meta http-equiv="refresh" content="5; url=https://script.google.com/macros/s/AKfycbzkNTA-kAYdcXjDUlrq7PIcdXDKUPQK5ocbUCFxWt6FXrusAgf2tOPXAUOqSBboWH14rw/exec
 ">
 
-  <!-- 2. iOS 圖示設定 (請確認檔案名真的是 icon.png) -->
+  <!-- 2. iOS 圖示設定 -->
   <link rel="apple-touch-icon" href="runnnn.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
   
   <style>
-    body { font-family: sans-serif; text-align: center; padding-top: 100px; color: #666; }
-    .loader { border: 4px solid #f3f3f3; border-top: 4px solid #20c997; border-radius: 50%; width: 30px; height: 30px; animation: spin 1s linear infinite; margin: 20px auto; }
+    body { font-family: sans-serif; text-align: center; padding-top: 50px; color: #333; }
+    .icon-preview { width: 120px; height: 120px; border-radius: 25px; margin-bottom: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+    .loader { border: 4px solid #f3f3f3; border-top: 4px solid #20c997; border-radius: 50%; width: 20px; height: 20px; animation: spin 1s linear infinite; display: inline-block; vertical-align: middle; margin-right: 10px; }
     @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-    a { color: #20c997; text-decoration: none; font-size: 14px; }
   </style>
 </head>
 <body>
-  <div class="loader"></div>
-  <p>正在進入跑步系統...</p>
-  <!-- 如果跳轉失敗，使用者可以手動點擊 -->
-  <a href="https://script.google.com/macros/s/AKfycbzkNTA-kAYdcXjDUlrq7PIcdXDKUPQK5ocbUCFxWt6FXrusAgf2tOPXAUOqSBboWH14rw/exec
-">點此手動開啟</a>
+  <!-- 顯示你的圖示，幫助 iOS 識別 -->
+  <img src="runnnn.png" class="icon-preview">
+  
+  <h2>跑步紀錄系統</h2>
+  <p><div class="loader"></div> 5 秒後自動開啟...</p>
+  
+  <p style="font-size: 14px; color: #888; margin-top: 50px;">
+    【現在立刻操作】<br>
+    點擊 Safari 下方的「分享按鈕」<br>
+    選擇「加入主畫面」
+  </p>
 
   <script>
-    // 3. JavaScript 跳轉
-    window.location.href = "https://script.google.com/macros/s/AKfycbzkNTA-kAYdcXjDUlrq7PIcdXDKUPQK5ocbUCFxWt6FXrusAgf2tOPXAUOqSBboWH14rw/exec
+    // 同樣設為 5 秒跳轉
+    setTimeout(function() {
+      window.location.href = "https://script.google.com/macros/s/AKfycbzkNTA-kAYdcXjDUlrq7PIcdXDKUPQK5ocbUCFxWt6FXrusAgf2tOPXAUOqSBboWH14rw/exec
 ";
+    }, 5000);
   </script>
 </body>
 </html>
